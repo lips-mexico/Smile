@@ -21,7 +21,9 @@ $sizes: (
 // Looks for a specific space's width and returns the correct value.
 // * $space-name: One of the five spaces that are used in the standard: (hand, page, book, desk, wide).
 @function get-width($space-name) {
-  @return 0;
+  @if(map-has-key($map: $sizes, $key: $space-name)) {
+    @return map-get($map: $sizes, $key: $space-name);
+  }
 }
 
 // =====================================================================================================
