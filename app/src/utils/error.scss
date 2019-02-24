@@ -7,36 +7,42 @@
 //                                                                  |___/
 // =====================================================================================================
 
-// The testing mode controls weather the errors are handled using @error and interrupt the compilation when true (default) or @warning and allow a potentially faulty compilation when false.
-$testing-mode: true !default;
+// The testing mode controls weather the errors are handled using @error and interrupt the compilation (false) or @debug when while on testing mode (true).
+$testing-mode: true;
 
 // Error types and descriptions of their usage;
 $error-types: (
-  type: 'Type',
-  handling: 'Handling'
+  // A variable or parameter in quetion had the wrong value range or data type.
+  // Expected: numbers<6, Obtained: 7
+  // Expected: 6(number), Obtained: 'six'(string).
+  value: 'Value',
+  // Error related to error handling.
+  handling: 'Handling',
 );
 
 // -----------------------------------------------------------------------------------------------------
 // throw()
 // -----------------------------------------------------------------------------------------------------
-// Reports and handles @errors and @warnings. Constructs their content using a message and a type.
-// * $message: The text message that is displayed in the @error or @warning.
+// Reports and handles @errors and @debugs. Constructs their content using a message and a type.
+// * $message: The text message that is displayed in the @error or @debug.
 // * $error-type: Has to be one of the types of errors inside the Error Handling Standard.
-@function throw($message, $error-type) {
+@function throw($message, $error-type, $testing-error: false) {
   // Verifies that $error-type is valid and part of the standard.
   $valid-type: map-has-key(
-    $map: $erro-types,
+    $map: $error-types,
     $key: $error-type
   );
   @if $valid-type == false {
     @return throw('Error type does not exist.', handling);
   }
-
-  // Handles and throws @error or @warning.
+  // Handles and throws @error or @debug.
   $final-message: map-get($error-types, $error-type) + ' Error: ' + $message;
   @if $testing-mode {
-    @error ($final-message);
+    @if ($testing-error == false) {
+      @debug ($final-message);
+    }
   } @else {
-    @warn ($final-message);
+    @error ($final-message);
   }
+  @return $final-message;
 }
