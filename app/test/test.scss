@@ -1,24 +1,24 @@
-@import 'true/true';
-@import '../design-system';
-
-// getWidth(space)
-@include describe('getWidth(space) function') {
-  @include it('Returns 320px with _hand_ space') {
-    @include assert-equal(get-width(hand), 320px);
-  }
-  @include it('Returns 600px with _page_ space') {
-    @include assert-equal(get-width(page), 600px);
-  }
-  @include it('Returns 900px with _book_ space') {
-    @include assert-equal(get-width(book), 900px);
-  }
-  @include it('Returns 1200px with _desk_ space') {
-    @include assert-equal(get-width(desk), 1200px);
-  }
-  @include it('Returns 1800px with _wide_ space') {
-    @include assert-equal(get-width(wide), 1800px);
-  }
-}
-
+// =====================================================================================================
+//    _   _       _ _     _            _       
+//   | | | |_ __ (_) |_  | |_ ___  ___| |_ ___ 
+//   | | | | '_ \| | __| | __/ _ \/ __| __/ __|
+//   | |_| | | | | | |_  | ||  __/\__ \ |_\__ \
+//    \___/|_| |_|_|\__|  \__\___||___/\__|___/
+//                                         
+// =====================================================================================================
+@import '../lib/true/true';
+@import '../src/main';
+// -----------------------------------------------------------------------------------------------------
+/// @name test_display-on
+///   Tests mixin display-on() inside utils/layouts.scss. Checks the generation of media queries given
+/// one or two space names as parameter.
+// @import 'units/test_display-on';
+//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+/// @name test_grid
+///   Tests mixin display-on() inside utils/layouts.scss. Checks the generation of media queries given
+/// one or two space names as parameter.
+// @import 'units/test_grid';
+// -----------------------------------------------------------------------------------------------------
+// Result display configuration.
 $true-terminal-output: false;
 @include report;

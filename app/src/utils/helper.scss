@@ -1,0 +1,27 @@
+// =====================================================================================================
+//    _   _      _                 
+//   | | | | ___| |_ __   ___ _ __ 
+//   | |_| |/ _ \ | '_ \ / _ \ '__|
+//   |  _  |  __/ | |_) |  __/ |   
+//   |_| |_|\___|_| .__/ \___|_|   
+//                |_|              
+// =====================================================================================================
+/// @name capitalize()
+/// Turns the first letter of a word into uppercase.
+// -----------------------------------------------------------------------------------------------------
+/// @param {string} $string - The word that is going to be capitalized.
+/// @output - A string with the first letter capitalized.
+/// @example
+///   - Sass -
+///   p {
+///     &::after {
+///       content: capitalize(lips);
+///     }
+///   }
+///   - CSS -
+///   p::after {
+///     content: "Lips";
+///   }
+@function capitalize($string) {
+  @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+}

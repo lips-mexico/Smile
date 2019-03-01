@@ -1,0 +1,309 @@
+@include describe('display($size, $until:null) mixin') {
+  // ---------------------------------------------------------------------------------------------------
+  @include it('Displays media query when until is null.') {
+    // -------------------------------------------------------------------------------------------------
+    @include assert('Display on size hand.') {
+      @include output {
+        @include display-on(hand){
+          font-size: 1em;
+        };
+      }
+      @include expect {
+        @media (min-width: 320px) and (max-width: 599px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size page.') {
+      @include output {
+        @include display-on($size: page) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 600px) and (max-width: 899px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size book.') {
+      @include output {
+        @include display-on($size: book) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 900px) and (max-width: 1199px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size desk.') {
+      @include output {
+        @include display-on($size: desk) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 1200px) and (max-width: 1799px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size wide.') {
+      @include output {
+        @include display-on($size: wide) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 1800px) and (max-width: 3000px) {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+  // ---------------------------------------------------------------------------------------------------
+  @include it('Displays media query when until is not null.') {
+    // -------------------------------------------------------------------------------------------------
+    @include assert('Display on size hand until desk.') {
+      @include output {
+        @include display-on($size: hand, $until: desk) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 320px) and (max-width: 1799px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size hand until page.') {
+      @include output {
+        @include display-on($size: hand, $until: page) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 320px) and (max-width: 899px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size page until wide.') {
+      @include output {
+        @include display-on($size: page, $until: wide) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 600px) and (max-width: 3000px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size page until book.') {
+      @include output {
+        @include display-on($size: page, $until: book) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 600px) and (max-width: 1199px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size book unitl wide.') {
+      @include output {
+        @include display-on($size: book, $until: wide) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 900px) and (max-width: 3000px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size book unitl desk.') {
+      @include output {
+        @include display-on($size: book, $until: desk) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 900px) and (max-width: 1799px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size desk unitl wide.') {
+      @include output {
+        @include display-on($size: desk, $until: wide) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 1200px) and (max-width: 3000px) {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+  // ---------------------------------------------------------------------------------------------------
+  @include it('Marks an error when until and size are the same.') {
+    // -------------------------------------------------------------------------------------------------
+    @include assert('Display on size hand until hand.') {
+      $device: hand;
+      @include output {
+        @include display-on($size: $device, $until: $device);
+      }
+      @include expect {
+        content: throw('This media query has redundant information. ‘display-on(#{$device})’', value, true);
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size page until page.') {
+      $device: page;
+      @include output {
+        @include display-on($size: $device, $until: $device);
+      }
+      @include expect {
+        content: throw('This media query has redundant information. ‘display-on(#{$device})’', value, true);
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size book until book.') {
+      $device: book;
+      @include output {
+        @include display-on($size: $device, $until: $device);
+      }
+      @include expect {
+        content: throw('This media query has redundant information. ‘display-on(#{$device})’', value, true);
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size desk until desk.') {
+      $device: desk;
+      @include output {
+        @include display-on($size: $device, $until: $device);
+      }
+      @include expect {
+        content: throw('This media query has redundant information. ‘display-on(#{$device})’', value, true);
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size wide until wide.') {
+      $device: wide;
+      @include output {
+        @include display-on($size: $device, $until: $device);
+      }
+      @include expect {
+        content: throw('This media query has redundant information. ‘display-on(#{$device})’', value, true);
+      }
+    }
+  }
+  // ---------------------------------------------------------------------------------------------------
+  @include it('Marks an error when includes all devices.') {
+    // -------------------------------------------------------------------------------------------------
+    @include assert('Display on size hand until wide.') {
+      @include output {
+        @include display-on($size: hand, $until: wide);
+      }
+      @include expect {
+        content: throw('This media query is redundant, it includes all devices.', value, true);
+      }
+    }
+  }
+  // ---------------------------------------------------------------------------------------------------
+  @include it('Marks an error when size value is larger than until value.') {
+    // -------------------------------------------------------------------------------------------------
+    @include assert('Display on size page until hand.') {
+      $t_size: page;
+      $t_until: hand;
+      @include output {
+        @include display-on($size: $t_size, $until: $t_until);
+      }
+      @include expect {
+        content: throw('Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.', value, true);
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size wide until hand.') {
+      $t_size: wide;
+      $t_until: hand;
+      @include output {
+        @include display-on($size: $t_size, $until: $t_until);
+      }
+      @include expect {
+        content: throw('Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.', value, true);
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size book until page.') {
+      $t_size: book;
+      $t_until: page;
+      @include output {
+        @include display-on($size: $t_size, $until: $t_until);
+      }
+      @include expect {
+        content: throw('Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.', value, true);
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size wide until page.') {
+      $t_size: wide;
+      $t_until: page;
+      @include output {
+        @include display-on($size: $t_size, $until: $t_until);
+      }
+      @include expect {
+        content: throw('Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.', value, true);
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size desk until book.') {
+      $t_size: desk;
+      $t_until: book;
+      @include output {
+        @include display-on($size: $t_size, $until: $t_until);
+      }
+      @include expect {
+        content: throw('Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.', value, true);
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size wide until book.') {
+      $t_size: wide;
+      $t_until: book;
+      @include output {
+        @include display-on($size: $t_size, $until: $t_until);
+      }
+      @include expect {
+        content: throw('Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.', value, true);
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('Display on size wide until desk.') {
+      $t_size: wide;
+      $t_until: desk;
+      @include output {
+        @include display-on($size: $t_size, $until: $t_until);
+      }
+      @include expect {
+        content: throw('Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.', value, true);
+      }
+    }
+  }
+}
