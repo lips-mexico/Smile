@@ -1,4 +1,3 @@
-@import 'error';
 // =====================================================================================================
 //    _                            _       
 //   | |    __ _ _   _  ___  _   _| |_ ___ 
@@ -7,7 +6,12 @@
 //   |_____\__,_|\__, |\___/ \__,_|\__|___/
 //               |___/                     
 // =====================================================================================================
-
+// Dependencies
+/// @require {file} error - src/utils/error.scss
+@import 'error';
+// -----------------------------------------------------------------------------------------------------
+/// @name $sizes
+///   Contains the minimum width value for the standard spaces.
 $sizes: (
   hand: 320px,
   page: 600px,
@@ -15,7 +19,9 @@ $sizes: (
   desk: 1200px,
   wide: 1800px
 );
-
+// -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+/// @name $max-sizes
+///   Contains the maximum width value for the standard spaces.
 $max-sizes: (
   hand: 599px,
   page: 899px,
@@ -23,7 +29,10 @@ $max-sizes: (
   desk: 1799px,
   wide: 3000px
 );
-
+// -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+/// @name $unit
+///   Determines the standard unit of measurement.
+$unit: 24px;
 // -----------------------------------------------------------------------------------------------------
 /// @name measure()
 ///   Looks for a the limit value of a space's width. Default returns the lower limit, the $max variable
@@ -31,10 +40,24 @@ $max-sizes: (
 // -----------------------------------------------------------------------------------------------------
 /// @param $space - Name of the space that needs to be measured.
 /// @param {bool} $max [false] - Returns the upper limit of the space's width.
-/// @output - Limit of the width of a space in pixels.
+/// @output {px} - Limit of the width of a space in pixels.
 /// @example
-///   $s_width = measure($space: hand); // 320px
-///   $l_width = measure($space: hand, $max: true); // 599px
+///   - Sass -
+///   div {
+///     &.min {
+///       width: measure($space: hand);
+///     }
+///     &.max {
+///       width: measure($space: hand, $max: true);
+///     }
+///   }
+///   - CSS -
+///   div.min {
+///     width: 320px;
+///   }
+///   div.max {
+///     width: 599px;
+///   }
 @function measure($space, $max: false) {
   @if($max) {
     @if(map-has-key($max-sizes, $space)) {
@@ -53,16 +76,23 @@ $max-sizes: (
 // -----------------------------------------------------------------------------------------------------
 /// @name display-on()
 ///   Creates the correct media query according to a space size input. The exact values will be the 
-/// limits of said space in pixels. Devices with screens smaller than 320px are not going to be handled
+/// limits of said space in pixels. Devices with screens smaller than 320px are not going to be handled 
 /// by the 'display()' function. Correct input values are: hand, page, book, desk, and wide.
 /// @content
 // -----------------------------------------------------------------------------------------------------
 /// @param $size - Space size that will be used to create a media query. 
 /// @param $until - Optional space size used to extend $size space to a larger limit.
-/// @output - Media queries.
+/// @output {property} - Media queries.
 /// @example
+///   - Sass -
 ///   div {
 ///     @include display-on(page, $until: desk) {
+///       // Style
+///     }
+///   }
+///   - CSS -
+///   div {
+///     @media (min-width: 600px) and (max-width: 1799px) {
 ///       // Style
 ///     }
 ///   }
@@ -71,10 +101,9 @@ $max-sizes: (
   $mq: null;
   // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
   @if ($size == $until) {
-    error: throw('This media query has redundant information. ‘display-on(#{$size})’', value);
-
+    content: throw('This media query has redundant information. ‘display-on(#{$size})’', value);
   } @else if ($size == hand) and ($until == wide) {
-    error: throw('This media query is redundant, it includes all devices.', value);
+    content: throw('This media query is redundant, it includes all devices.', value);
   }
   // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
   @if $until {
@@ -83,11 +112,10 @@ $max-sizes: (
     $l-until: measure($until, true);
     // Value validation
     @if ($s-device > $l-until) {
-      error: throw('Did you mean ‘display-on(#{$until}, $until: #{$size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.', value);
+      content: throw('Did you mean ‘display-on(#{$until}, $until: #{$size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.', value);
     }
     // Buids media query
     $mq: '(min-width: #{$s-device}) and (max-width: #{$l-until})';
-  
   } @else {
     // Obtains pixel values
     $s-device: measure($size);
@@ -97,17 +125,51 @@ $max-sizes: (
   }
   @if mq {
     @media #{$mq} {
-        @content;
+      @content;
     }
-  } 
+  }
 }
-
 // -----------------------------------------------------------------------------------------------------
-// display()
+/// @name grid()
+///   Sets the correct grid attributes depending on the amount of columns and offset spaces.
 // -----------------------------------------------------------------------------------------------------
-// Sets the correct grid attributes depending on the amount of columns and offset spaces.
-// * $columns: Amount of columns, can only be 4, 8 or 12.
-// * $offset-multiplier: This number multiplied by 24px will become the grid’s margin and offset.
+/// @param $columns - Amount of columns, can only be 4, 8 or 12.
+/// @param $offset-multiplier - This number multiplied by 24px will become the grid’s margin and offset.
+/// @output {property} - Displays a grid and sets it's columns, gap and padding.
+/// @example
+///   - Sass -
+///   div {
+///     @include grid(12, 4);
+///   }
+///   - CSS -
+///   div {
+///     width: 100%;
+///     display: grid;
+///     grid-gap: 24px;
+///     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+///     padding-left: 96px;
+///     padding-right: 96px;
+///   }
 @mixin grid($columns, $offset-multiplier) {
-  display: none;
+  @if ($columns != 4) and ($columns != 8) and ($columns != 12) {
+    content: throw('', value);
+  } @else if (($offset-multiplier > 0) and ($offset-multiplier <= 16)) == false {
+    content: throw('', value);
+  } @else {
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+    width: 100%;
+    display: grid;
+    grid-gap: $unit;
+    @if ($columns == 4) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    } @else if ($columns == 8) {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    } @else if ($columns == 12) {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    } @else {
+      content: throw('', value);
+    }
+    padding-left: $unit * $offset-multiplier;
+    padding-right: $unit * $offset-multiplier;
+  }
 }
