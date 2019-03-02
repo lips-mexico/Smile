@@ -1,24 +1,23 @@
 // =====================================================================================================
-//    _   _       _ _     _            _       
-//   | | | |_ __ (_) |_  | |_ ___  ___| |_ ___ 
+//    _   _       _ _     _            _
+//   | | | |_ __ (_) |_  | |_ ___  ___| |_ ___
 //   | | | | '_ \| | __| | __/ _ \/ __| __/ __|
 //   | |_| | | | | | |_  | ||  __/\__ \ |_\__ \
 //    \___/|_| |_|_|\__|  \__\___||___/\__|___/
-//                                         
+//
 // =====================================================================================================
 @import '../lib/true/true';
-@import '../src/main';
 // -----------------------------------------------------------------------------------------------------
 /// @name test_display-on
-///   Tests mixin display-on() inside utils/layouts.scss. Checks the generation of media queries given
+/// Tests mixin display-on() inside utils/layouts.scss. Checks the generation of media queries given
 /// one or two space names as parameter.
 // @import 'units/test_display-on';
 //  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 /// @name test_grid
 ///   Tests mixin display-on() inside utils/layouts.scss. Checks the generation of media queries given
 /// one or two space names as parameter.
-// @import 'units/test_grid';
+@import 'units/test_grid';
 // -----------------------------------------------------------------------------------------------------
 // Result display configuration.
-$true-terminal-output: false;
+$true-terminal-output: true;
 @include report;

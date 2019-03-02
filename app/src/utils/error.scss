@@ -6,58 +6,48 @@
 //   |_____|_|  |_|  \___/|_|    |_| |_|\__,_|_| |_|\__,_|_|_|_| |_|\__, |
 //                                                                  |___/
 // =====================================================================================================
-/// @name $testing-mode
-///   The testing mode controls weather the errors are handled using @error and interrupt the
+// Dependencies
+@import 'helper';
+// -----------------------------------------------------------------------------------------------------
+/// The testing mode controls weather the errors are handled using @error and interrupt the
 /// compilation (false) or @debug while on testing mode (true).
+/// @name testing-mode
+/// @type bool
 $testing-mode: true;
-// -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-/// @name $error-types
-///   Error types and descriptions of their usage.
-$error-types: (
-  // A variable or parameter in quetion had the wrong value range or data type.
-  // Expected: numbers<6, Obtained: 7
-  // Expected: 6(number), Obtained: 'six'(string).
-  value: 'Value',
-  // Error related to error handling.
-  handling: 'Handling',
-);
+/// Error types and descriptions of their usage.
+/// * __Value:__ A variable or parameter in quetion had the wrong value range or data type.
+/// * __Handling:__ Error related to error handling.
+/// @name error-types
+/// @type list
+$error-types: ('value', 'handling');
 // -----------------------------------------------------------------------------------------------------
-/// @name throw()
 /// Reports and handles @errors and @debugs. Constructs their content using a message and a type.
-// -----------------------------------------------------------------------------------------------------
-/// @param $message - The text message that is displayed in the @error or @debug.
-/// @param $error-type - Has to be one of the types of errors inside the Error Handling Standard.
-/// @output {string} - Final error display that contains message and error type.
-/// @example
-/// - Sass -
-/// @mixin set-width($width) {
-///   @if ($width == 0) {
-///     content: throw('Can't convert value 0 to pixels.', value);
-///   } @else {
-///     width: $width;
+/// @name throw
+/// @param {string} message ['Unkown error.'] - The text message that is displayed in the @error or
+/// @debug.
+/// @param {string} error-type ['none'] - Has to be one of the types of errors inside the Error Handling
+/// Standard.
+/// @example scss - Sass
+///   @mixin set-width($width) {
+///     @if ($width == 0) {
+///       content: throw('Can't convert value 0 to pixels.', value);
+///     } @else {
+///       width: $width;
+///     }
 ///   }
-/// }
-/// div {
-///   @include set-width(0);
-/// }
-/// - CSS -
-/// Value Error: Can't Convert value 0 to pixels.
-@function throw($message, $error-type, $testing-error: false) {
+///   div {
+///     @include set-width(0);
+///   }
+/// @example css - Console message
+///   Value Error: Can't Convert value 0 to pixels.
+///
+@function throw($message: 'Unkown error.', $error-type: 'none') {
   // Verifies that $error-type is valid and part of the standard.
-  $valid-type: map-has-key(
-    $map: $error-types,
-    $key: $error-type
-  );
-  @if $valid-type == false {
-    @return throw('Error type does not exist.', handling);
+  @if index($error-types, $error-type) == null {
+    @return throw($message, 'handling');
   }
-  // Handles and throws @error or @debug.
-  $final-message: map-get($error-types, $error-type) + ' Error: ' + $message;
-  @if $testing-mode {
-    @if ($testing-error == false) {
-      @debug ($final-message);
-    }
-  } @else {
+  $final-message: '' + capitalize($error-type) + ' Error: ' + $message;
+  @if $testing-mode == false {
     @error ($final-message);
   }
   @return $final-message;
