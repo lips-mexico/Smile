@@ -1,0 +1,2 @@
+dest: "./docs"
+package: "./package.json" 
