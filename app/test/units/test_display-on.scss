@@ -1,12 +1,14 @@
+@import '../../src/main';
+
 @include describe('display($size, $until:null) mixin') {
   // ---------------------------------------------------------------------------------------------------
   @include it('Displays media query when until is null.') {
     // -------------------------------------------------------------------------------------------------
     @include assert('Display on size hand.') {
       @include output {
-        @include display-on(hand){
+        @include display-on(hand) {
           font-size: 1em;
-        };
+        }
       }
       @include expect {
         @media (min-width: 320px) and (max-width: 599px) {
@@ -170,7 +172,10 @@
         @include display-on($size: $device, $until: $device);
       }
       @include expect {
-        content: throw('This media query has redundant information. ‘display-on(#{$device})’', value, true);
+        content: throw(
+          'This media query has redundant information. ‘display-on(#{$device})’',
+          value
+        );
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -180,7 +185,10 @@
         @include display-on($size: $device, $until: $device);
       }
       @include expect {
-        content: throw('This media query has redundant information. ‘display-on(#{$device})’', value, true);
+        content: throw(
+          'This media query has redundant information. ‘display-on(#{$device})’',
+          value
+        );
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -190,7 +198,10 @@
         @include display-on($size: $device, $until: $device);
       }
       @include expect {
-        content: throw('This media query has redundant information. ‘display-on(#{$device})’', value, true);
+        content: throw(
+          'This media query has redundant information. ‘display-on(#{$device})’',
+          value
+        );
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -200,7 +211,10 @@
         @include display-on($size: $device, $until: $device);
       }
       @include expect {
-        content: throw('This media query has redundant information. ‘display-on(#{$device})’', value, true);
+        content: throw(
+          'This media query has redundant information. ‘display-on(#{$device})’',
+          value
+        );
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -210,7 +224,10 @@
         @include display-on($size: $device, $until: $device);
       }
       @include expect {
-        content: throw('This media query has redundant information. ‘display-on(#{$device})’', value, true);
+        content: throw(
+          'This media query has redundant information. ‘display-on(#{$device})’',
+          value
+        );
       }
     }
   }
@@ -222,7 +239,10 @@
         @include display-on($size: hand, $until: wide);
       }
       @include expect {
-        content: throw('This media query is redundant, it includes all devices.', value, true);
+        content: throw(
+          'This media query is redundant, it includes all devices.',
+          value
+        );
       }
     }
   }
@@ -236,7 +256,10 @@
         @include display-on($size: $t_size, $until: $t_until);
       }
       @include expect {
-        content: throw('Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.', value, true);
+        content: throw(
+          'Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.',
+          value
+        );
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -247,7 +270,10 @@
         @include display-on($size: $t_size, $until: $t_until);
       }
       @include expect {
-        content: throw('Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.', value, true);
+        content: throw(
+          'Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.',
+          value
+        );
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -258,7 +284,10 @@
         @include display-on($size: $t_size, $until: $t_until);
       }
       @include expect {
-        content: throw('Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.', value, true);
+        content: throw(
+          'Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.',
+          value
+        );
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -269,7 +298,10 @@
         @include display-on($size: $t_size, $until: $t_until);
       }
       @include expect {
-        content: throw('Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.', value, true);
+        content: throw(
+          'Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.',
+          value
+        );
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -280,7 +312,10 @@
         @include display-on($size: $t_size, $until: $t_until);
       }
       @include expect {
-        content: throw('Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.', value, true);
+        content: throw(
+          'Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.',
+          value
+        );
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -291,7 +326,10 @@
         @include display-on($size: $t_size, $until: $t_until);
       }
       @include expect {
-        content: throw('Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.', value, true);
+        content: throw(
+          'Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.',
+          value
+        );
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -302,7 +340,10 @@
         @include display-on($size: $t_size, $until: $t_until);
       }
       @include expect {
-        content: throw('Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.', value, true);
+        content: throw(
+          'Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.',
+          value
+        );
       }
     }
   }
