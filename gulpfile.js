@@ -77,7 +77,7 @@ gulp.task('minify', function() {
  * @description - Parses all SassDoc comments and creates a configured web documentation library.
  */
 gulp.task('doc', function() {
-  return gulp.src([file.sass, file.test_units, file.templates]).pipe(sassdoc());
+  return gulp.src([file.sass,  file.templates]).pipe(sassdoc());
 });
 // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 /**
