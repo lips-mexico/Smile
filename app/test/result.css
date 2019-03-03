@@ -1,427 +1,301 @@
-@charset "UTF-8";
-div p {
-  font-size: 24px;
-  color: green;
-}
-
-/* # Module: display($size, $until:null) mixin */
-/* ------------------------------------------- */
-/* Test: Displays media query when until is null. */
-/*   ASSERT: Display on size hand.   */
+/* # Module: grid() - mixin */
+/* ------------------------ */
+/* Test: Displayes a grid given standard parameters. */
+/*   ASSERT: 4 Col with 0x offset.   */
 /*   OUTPUT   */
-@media (min-width: 320px) and (max-width: 599px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 100%; }
 
 /*   END_OUTPUT   */
 /*   EXPECTED   */
-@media (min-width: 320px) and (max-width: 599px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%; }
 
 /*   END_EXPECTED   */
 /*   END_ASSERT   */
-/*   ASSERT: Display on size page.   */
+/*   ASSERT: 4 Col with 1x offset.   */
 /*   OUTPUT   */
-@media (min-width: 600px) and (max-width: 899px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 100%; }
 
 /*   END_OUTPUT   */
 /*   EXPECTED   */
-@media (min-width: 600px) and (max-width: 899px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 100%; }
 
 /*   END_EXPECTED   */
 /*   END_ASSERT   */
-/*   ASSERT: Display on size book.   */
+/*   ASSERT: 4 Col with 16x offset.   */
 /*   OUTPUT   */
-@media (min-width: 900px) and (max-width: 1199px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-left: 384px;
+  padding-right: 384px;
+  width: 100%; }
 
 /*   END_OUTPUT   */
 /*   EXPECTED   */
-@media (min-width: 900px) and (max-width: 1199px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-left: 384px;
+  padding-right: 384px;
+  width: 100%; }
 
 /*   END_EXPECTED   */
 /*   END_ASSERT   */
-/*   ASSERT: Display on size desk.   */
+/*   ASSERT: 8 Col with 0x offset.   */
 /*   OUTPUT   */
-@media (min-width: 1200px) and (max-width: 1799px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 100%; }
 
 /*   END_OUTPUT   */
 /*   EXPECTED   */
-@media (min-width: 1200px) and (max-width: 1799px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%; }
 
 /*   END_EXPECTED   */
 /*   END_ASSERT   */
-/*   ASSERT: Display on size wide.   */
+/*   ASSERT: 8 Col with 1x offset.   */
 /*   OUTPUT   */
-@media (min-width: 1800px) and (max-width: 3000px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 100%; }
 
 /*   END_OUTPUT   */
 /*   EXPECTED   */
-@media (min-width: 1800px) and (max-width: 3000px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 100%; }
 
 /*   END_EXPECTED   */
 /*   END_ASSERT   */
-/*  */
-/* Test: Displays media query when until is not null. */
-/*   ASSERT: Display on size hand until desk.   */
+/*   ASSERT: 8 Col with 16x offset.   */
 /*   OUTPUT   */
-@media (min-width: 320px) and (max-width: 1799px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-left: 384px;
+  padding-right: 384px;
+  width: 100%; }
 
 /*   END_OUTPUT   */
 /*   EXPECTED   */
-@media (min-width: 320px) and (max-width: 1799px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-left: 384px;
+  padding-right: 384px;
+  width: 100%; }
 
 /*   END_EXPECTED   */
 /*   END_ASSERT   */
-/*   ASSERT: Display on size hand until page.   */
+/*   ASSERT: 12 Col with 0x offset.   */
 /*   OUTPUT   */
-@media (min-width: 320px) and (max-width: 899px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 100%; }
 
 /*   END_OUTPUT   */
 /*   EXPECTED   */
-@media (min-width: 320px) and (max-width: 899px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%; }
 
 /*   END_EXPECTED   */
 /*   END_ASSERT   */
-/*   ASSERT: Display on size page until wide.   */
+/*   ASSERT: 12 Col with 1x offset.   */
 /*   OUTPUT   */
-@media (min-width: 600px) and (max-width: 3000px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 100%; }
 
 /*   END_OUTPUT   */
 /*   EXPECTED   */
-@media (min-width: 600px) and (max-width: 3000px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 100%; }
 
 /*   END_EXPECTED   */
 /*   END_ASSERT   */
-/*   ASSERT: Display on size page until book.   */
+/*   ASSERT: 12 Col with 16x offset.   */
 /*   OUTPUT   */
-@media (min-width: 600px) and (max-width: 1199px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-left: 384px;
+  padding-right: 384px;
+  width: 100%; }
 
 /*   END_OUTPUT   */
 /*   EXPECTED   */
-@media (min-width: 600px) and (max-width: 1199px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
-
-/*   END_EXPECTED   */
-/*   END_ASSERT   */
-/*   ASSERT: Display on size book unitl wide.   */
-/*   OUTPUT   */
-@media (min-width: 900px) and (max-width: 3000px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
-
-/*   END_OUTPUT   */
-/*   EXPECTED   */
-@media (min-width: 900px) and (max-width: 3000px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
-
-/*   END_EXPECTED   */
-/*   END_ASSERT   */
-/*   ASSERT: Display on size book unitl desk.   */
-/*   OUTPUT   */
-@media (min-width: 900px) and (max-width: 1799px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
-
-/*   END_OUTPUT   */
-/*   EXPECTED   */
-@media (min-width: 900px) and (max-width: 1799px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
-
-/*   END_EXPECTED   */
-/*   END_ASSERT   */
-/*   ASSERT: Display on size desk unitl wide.   */
-/*   OUTPUT   */
-@media (min-width: 1200px) and (max-width: 3000px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
-
-/*   END_OUTPUT   */
-/*   EXPECTED   */
-@media (min-width: 1200px) and (max-width: 3000px) {
-  .test-output {
-    font-size: 1em;
-  }
-}
+.test-output {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-left: 384px;
+  padding-right: 384px;
+  width: 100%; }
 
 /*   END_EXPECTED   */
 /*   END_ASSERT   */
 /*  */
-/* Test: Marks an error when until and size are the same. */
-/*   ASSERT: Display on size hand until hand.   */
+/* Test: Prints an error when the amount of columns is not 4, 8 or 12. */
+/*   ASSERT: 3 Col with 1x offset.   */
 /*   OUTPUT   */
 .test-output {
-  content: 'Value Error: This media query has redundant information. ‘display-on(hand)’';
-}
+  content: "Value Error: Amount of columns must be 4, 8 or 12. For more information on this, see grid standard."; }
 
 /*   END_OUTPUT   */
 /*   EXPECTED   */
 .test-output {
-  content: 'Value Error: This media query has redundant information. ‘display-on(hand)’';
-}
+  content: "Value Error: Amount of columns must be 4, 8 or 12. For more information on this, see grid standard."; }
 
 /*   END_EXPECTED   */
 /*   END_ASSERT   */
-/*   ASSERT: Display on size page until page.   */
+/*   ASSERT: 5 Col with 1x offset.   */
 /*   OUTPUT   */
 .test-output {
-  content: 'Value Error: This media query has redundant information. ‘display-on(page)’';
-}
+  content: "Value Error: Amount of columns must be 4, 8 or 12. For more information on this, see grid standard."; }
 
 /*   END_OUTPUT   */
 /*   EXPECTED   */
 .test-output {
-  content: 'Value Error: This media query has redundant information. ‘display-on(page)’';
-}
+  content: "Value Error: Amount of columns must be 4, 8 or 12. For more information on this, see grid standard."; }
 
 /*   END_EXPECTED   */
 /*   END_ASSERT   */
-/*   ASSERT: Display on size book until book.   */
+/*   ASSERT: 7 Col with 1x offset.   */
 /*   OUTPUT   */
 .test-output {
-  content: 'Value Error: This media query has redundant information. ‘display-on(book)’';
-}
+  content: "Value Error: Amount of columns must be 4, 8 or 12. For more information on this, see grid standard."; }
 
 /*   END_OUTPUT   */
 /*   EXPECTED   */
 .test-output {
-  content: 'Value Error: This media query has redundant information. ‘display-on(book)’';
-}
+  content: "Value Error: Amount of columns must be 4, 8 or 12. For more information on this, see grid standard."; }
 
 /*   END_EXPECTED   */
 /*   END_ASSERT   */
-/*   ASSERT: Display on size desk until desk.   */
+/*   ASSERT: 9 Col with 1x offset.   */
 /*   OUTPUT   */
 .test-output {
-  content: 'Value Error: This media query has redundant information. ‘display-on(desk)’';
-}
+  content: "Value Error: Amount of columns must be 4, 8 or 12. For more information on this, see grid standard."; }
 
 /*   END_OUTPUT   */
 /*   EXPECTED   */
 .test-output {
-  content: 'Value Error: This media query has redundant information. ‘display-on(desk)’';
-}
+  content: "Value Error: Amount of columns must be 4, 8 or 12. For more information on this, see grid standard."; }
 
 /*   END_EXPECTED   */
 /*   END_ASSERT   */
-/*   ASSERT: Display on size wide until wide.   */
+/*   ASSERT: 11 Col with 1x offset.   */
 /*   OUTPUT   */
 .test-output {
-  content: 'Value Error: This media query has redundant information. ‘display-on(wide)’';
-}
+  content: "Value Error: Amount of columns must be 4, 8 or 12. For more information on this, see grid standard."; }
 
 /*   END_OUTPUT   */
 /*   EXPECTED   */
 .test-output {
-  content: 'Value Error: This media query has redundant information. ‘display-on(wide)’';
-}
+  content: "Value Error: Amount of columns must be 4, 8 or 12. For more information on this, see grid standard."; }
 
 /*   END_EXPECTED   */
 /*   END_ASSERT   */
-/*  */
-/* Test: Marks an error when includes all devices. */
-/*   ASSERT: Display on size hand until wide.   */
+/*   ASSERT: 13 Col with 1x offset.   */
 /*   OUTPUT   */
 .test-output {
-  content: 'Value Error: This media query is redundant, it includes all devices.';
-}
+  content: "Value Error: Amount of columns must be 4, 8 or 12. For more information on this, see grid standard."; }
 
 /*   END_OUTPUT   */
 /*   EXPECTED   */
 .test-output {
-  content: 'Value Error: This media query is redundant, it includes all devices.';
-}
+  content: "Value Error: Amount of columns must be 4, 8 or 12. For more information on this, see grid standard."; }
 
 /*   END_EXPECTED   */
 /*   END_ASSERT   */
 /*  */
-/* Test: Marks an error when size value is larger than until value. */
-/*   ASSERT: Display on size page until hand.   */
+/* Test: Prints an error when the amount of columns is not between 0 and 16, inclusive. */
+/*   ASSERT: 4 Col with 17 offset.   */
 /*   OUTPUT   */
 .test-output {
-  content: 'Value Error: Did you mean ‘display-on(hand, $until: page)’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.';
-}
+  content: "Value Error: The offset multiplier must be between 0 and 16, inclusive."; }
 
 /*   END_OUTPUT   */
 /*   EXPECTED   */
 .test-output {
-  content: 'Value Error: Did you mean ‘display-on(hand, $until: page)’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.';
-}
-
-/*   END_EXPECTED   */
-/*   END_ASSERT   */
-/*   ASSERT: Display on size wide until hand.   */
-/*   OUTPUT   */
-.test-output {
-  content: 'Value Error: Did you mean ‘display-on(hand, $until: wide)’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.';
-}
-
-/*   END_OUTPUT   */
-/*   EXPECTED   */
-.test-output {
-  content: 'Value Error: Did you mean ‘display-on(hand, $until: wide)’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.';
-}
-
-/*   END_EXPECTED   */
-/*   END_ASSERT   */
-/*   ASSERT: Display on size book until page.   */
-/*   OUTPUT   */
-.test-output {
-  content: 'Value Error: Did you mean ‘display-on(page, $until: book)’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.';
-}
-
-/*   END_OUTPUT   */
-/*   EXPECTED   */
-.test-output {
-  content: 'Value Error: Did you mean ‘display-on(page, $until: book)’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.';
-}
-
-/*   END_EXPECTED   */
-/*   END_ASSERT   */
-/*   ASSERT: Display on size wide until page.   */
-/*   OUTPUT   */
-.test-output {
-  content: 'Value Error: Did you mean ‘display-on(page, $until: wide)’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.';
-}
-
-/*   END_OUTPUT   */
-/*   EXPECTED   */
-.test-output {
-  content: 'Value Error: Did you mean ‘display-on(page, $until: wide)’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.';
-}
-
-/*   END_EXPECTED   */
-/*   END_ASSERT   */
-/*   ASSERT: Display on size desk until book.   */
-/*   OUTPUT   */
-.test-output {
-  content: 'Value Error: Did you mean ‘display-on(book, $until: desk)’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.';
-}
-
-/*   END_OUTPUT   */
-/*   EXPECTED   */
-.test-output {
-  content: 'Value Error: Did you mean ‘display-on(book, $until: desk)’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.';
-}
-
-/*   END_EXPECTED   */
-/*   END_ASSERT   */
-/*   ASSERT: Display on size wide until book.   */
-/*   OUTPUT   */
-.test-output {
-  content: 'Value Error: Did you mean ‘display-on(book, $until: wide)’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.';
-}
-
-/*   END_OUTPUT   */
-/*   EXPECTED   */
-.test-output {
-  content: 'Value Error: Did you mean ‘display-on(book, $until: wide)’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.';
-}
-
-/*   END_EXPECTED   */
-/*   END_ASSERT   */
-/*   ASSERT: Display on size wide until desk.   */
-/*   OUTPUT   */
-.test-output {
-  content: 'Value Error: Did you mean ‘display-on(desk, $until: wide)’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.';
-}
-
-/*   END_OUTPUT   */
-/*   EXPECTED   */
-.test-output {
-  content: 'Value Error: Did you mean ‘display-on(desk, $until: wide)’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.';
-}
+  content: "Value Error: The offset multiplier must be between 0 and 16, inclusive."; }
 
 /*   END_EXPECTED   */
 /*   END_ASSERT   */
 /*  */
 /*  */
 /* # SUMMARY ---------- */
-/* 5 Tests: */
+/* 3 Tests: */
 /* - 0 Passed */
 /* - 0 Failed */
-/* - 5 Output to CSS */
+/* - 3 Output to CSS */
 /* Stats: */
 /* - 1 Module */
-/* - 5 Tests */
-/* - 25 Assertions */
+/* - 3 Tests */
+/* - 16 Assertions */
 /* -------------------- */

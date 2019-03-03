@@ -1,9 +1,14 @@
-@import '../../src/main';
-
-@include describe('display($size, $until:null) mixin') {
-  // ---------------------------------------------------------------------------------------------------
+@import '../../../src/main';
+// -----------------------------------------------------------------------------------------------------
+/// Displays media query when until is null.
+/// * Display on size hand.
+/// * Display on size page.
+/// * Display on size book.
+/// * Display on size desk.
+/// * Display on size wide.
+/// @group testing
+@mixin _display-on--s01 {
   @include it('Displays media query when until is null.') {
-    // -------------------------------------------------------------------------------------------------
     @include assert('Display on size hand.') {
       @include output {
         @include display-on(hand) {
@@ -69,9 +74,19 @@
       }
     }
   }
-  // ---------------------------------------------------------------------------------------------------
+}
+// -----------------------------------------------------------------------------------------------------
+/// Displays media query when until is not null.
+/// * Display on size hand until desk.
+/// * Display on size hand until page.
+/// * Display on size page until wide.
+/// * Display on size page until book.
+/// * Display on size book unitl wide.
+/// * Display on size book unitl desk.
+/// * Display on size desk unitl wide.
+/// @group testing
+@mixin _display-on--s02 {
   @include it('Displays media query when until is not null.') {
-    // -------------------------------------------------------------------------------------------------
     @include assert('Display on size hand until desk.') {
       @include output {
         @include display-on($size: hand, $until: desk) {
@@ -163,9 +178,17 @@
       }
     }
   }
-  // ---------------------------------------------------------------------------------------------------
+}
+// -----------------------------------------------------------------------------------------------------
+/// Marks an error when until and size are the same.
+/// * Display on size hand until hand.
+/// * Display on size page until page.
+/// * Display on size book until book.
+/// * Display on size desk until desk.
+/// * Display on size wide until wide.
+/// @group testing
+@mixin _display-on--e01 {
   @include it('Marks an error when until and size are the same.') {
-    // -------------------------------------------------------------------------------------------------
     @include assert('Display on size hand until hand.') {
       $device: hand;
       @include output {
@@ -231,7 +254,12 @@
       }
     }
   }
-  // ---------------------------------------------------------------------------------------------------
+}
+// -----------------------------------------------------------------------------------------------------
+/// Marks an error when includes all devices.
+/// * Display on size hand until wide.
+/// @group testing
+@mixin _display-on--e02 {
   @include it('Marks an error when includes all devices.') {
     // -------------------------------------------------------------------------------------------------
     @include assert('Display on size hand until wide.') {
@@ -246,9 +274,19 @@
       }
     }
   }
-  // ---------------------------------------------------------------------------------------------------
+}
+// -----------------------------------------------------------------------------------------------------
+/// Marks an error when size value is larger than until value.
+/// * Display on size page until hand.
+/// * Display on size wide until hand.
+/// * Display on size book until page.
+/// * Display on size wide until page.
+/// * Display on size desk until book.
+/// * Display on size wide until book.
+/// * Display on size wide until desk.
+/// @group testing
+@mixin _display-on--e03 {
   @include it('Marks an error when size value is larger than until value.') {
-    // -------------------------------------------------------------------------------------------------
     @include assert('Display on size page until hand.') {
       $t_size: page;
       $t_until: hand;
@@ -347,4 +385,12 @@
       }
     }
   }
+}
+// -----------------------------------------------------------------------------------------------------
+@include describe('display-on() - mixin') {
+  @include _display-on--s01;
+  @include _display-on--s02;
+  @include _display-on--e01;
+  @include _display-on--e02;
+  @include _display-on--e03;
 }

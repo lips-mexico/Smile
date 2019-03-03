@@ -1,16 +1,562 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Design-system - v1.0.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Design-system - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="Release the docs!"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title"><a href="https://github.com/poncho-guerrero/Design-System#readme">Design-system - v1.0.0</a></h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-variable"><a href="#undefined-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="testing-mode" data-type="variable"><a href="#undefined-variable-testing-mode">testing-mode</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="error-types" data-type="variable"><a href="#undefined-variable-error-types">error-types</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="unit" data-type="variable"><a href="#undefined-variable-unit">unit</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="sizes" data-type="variable"><a href="#undefined-variable-sizes">sizes</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="max-sizes" data-type="variable"><a href="#undefined-variable-max-sizes">max-sizes</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-function"><a href="#undefined-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="throw" data-type="function"><a href="#undefined-function-throw">throw</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="capitalize" data-type="function"><a href="#undefined-function-capitalize">capitalize</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="measure" data-type="function"><a href="#undefined-function-measure">measure</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-mixin"><a href="#undefined-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="display-on" data-type="mixin"><a href="#undefined-mixin-display-on">display-on</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="grid" data-type="mixin"><a href="#undefined-mixin-grid">grid</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="undefined-variable-testing-mode"><h3 class="item__heading"><a class="item__name" href="#variable-testing-mode">testing-mode</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$testing-mode: true;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The testing mode controls weather the errors are handled using @error and interrupt the compilation (false) or @debug while on testing mode (true).</p></div><h3 class="item__sub-heading">Type</h3><p><code>Bool</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-throw"><code>throw</code></a></li></ul></section><section class="main__item container item" id="undefined-variable-error-types"><h3 class="item__heading"><a class="item__name" href="#variable-error-types">error-types</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$error-types: (&#39;value&#39;, &#39;handling&#39;);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Error types and descriptions of their usage.</p><ul><li><strong>Value:</strong> A variable or parameter in quetion had the wrong value range or data type.</li><li><strong>Handling:</strong> Error related to error handling.</li></ul></div><h3 class="item__sub-heading">Type</h3><p><code>List</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-throw"><code>throw</code></a></li></ul></section><section class="main__item container item" id="undefined-variable-unit"><h3 class="item__heading"><a class="item__name" href="#variable-unit">unit</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$unit: 24px;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Determines the standard unit of measurement.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Number - pixels</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-grid"><code>grid</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-grid"><code>grid</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-grid"><code>grid</code></a></li></ul></section><section class="main__item container item" id="undefined-variable-sizes"><h3 class="item__heading"><a class="item__name" href="#variable-sizes">sizes</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$sizes: (
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Design-system - v1.0.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Design-system - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="Release the docs!"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title"><a href="https://github.io/poncho-guerrero/Design-System">Design-system - v1.0.0</a></h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="templates"><a href="#templates">templates</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="templates-mixin"><a href="#templates-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="templates" data-name="_mixin-test-description" data-type="mixin"><a href="#templates-mixin-_mixin-test-description">_mixin-test-description</a></li><li class="sidebar__item sassdoc__item" data-group="templates" data-name="_mixin-test-module" data-type="mixin"><a href="#templates-mixin-_mixin-test-module">_mixin-test-module</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="testing"><a href="#testing">testing</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="testing-mixin"><a href="#testing-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="testing" data-name="_display-on--s01" data-type="mixin"><a href="#testing-mixin-_display-on--s01">_display-on--s01</a></li><li class="sidebar__item sassdoc__item" data-group="testing" data-name="_display-on--s02" data-type="mixin"><a href="#testing-mixin-_display-on--s02">_display-on--s02</a></li><li class="sidebar__item sassdoc__item" data-group="testing" data-name="_display-on--e01" data-type="mixin"><a href="#testing-mixin-_display-on--e01">_display-on--e01</a></li><li class="sidebar__item sassdoc__item" data-group="testing" data-name="_display-on--e02" data-type="mixin"><a href="#testing-mixin-_display-on--e02">_display-on--e02</a></li><li class="sidebar__item sassdoc__item" data-group="testing" data-name="_display-on--e03" data-type="mixin"><a href="#testing-mixin-_display-on--e03">_display-on--e03</a></li><li class="sidebar__item sassdoc__item" data-group="testing" data-name="_grid--s01" data-type="mixin"><a href="#testing-mixin-_grid--s01">_grid--s01</a></li><li class="sidebar__item sassdoc__item" data-group="testing" data-name="_grid--e01" data-type="mixin"><a href="#testing-mixin-_grid--e01">_grid--e01</a></li><li class="sidebar__item sassdoc__item" data-group="testing" data-name="_grid--e02" data-type="mixin"><a href="#testing-mixin-_grid--e02">_grid--e02</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="utilities"><a href="#utilities">utilities</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="utilities-variable"><a href="#utilities-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="testing-mode" data-type="variable"><a href="#utilities-variable-testing-mode">testing-mode</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="error-types" data-type="variable"><a href="#utilities-variable-error-types">error-types</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="unit" data-type="variable"><a href="#utilities-variable-unit">unit</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="sizes" data-type="variable"><a href="#utilities-variable-sizes">sizes</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="max-sizes" data-type="variable"><a href="#utilities-variable-max-sizes">max-sizes</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="utilities-function"><a href="#utilities-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="throw" data-type="function"><a href="#utilities-function-throw">throw</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="capitalize" data-type="function"><a href="#utilities-function-capitalize">capitalize</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="measure" data-type="function"><a href="#utilities-function-measure">measure</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="utilities-mixin"><a href="#utilities-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="display-on" data-type="mixin"><a href="#utilities-mixin-display-on">display-on</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="grid" data-type="mixin"><a href="#utilities-mixin-grid">grid</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="templates"><div class="container">templates</div></h1><section class="main__sub-section" id="templates-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="templates-mixin-_mixin-test-description"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#mixin-_mixin-test-description">_mixin-test-description</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin _mixin-test-description() { 
+  @include describe(&#39;mixin-name() - mixin&#39;) {
+    // @include _test-module-s00;
+    // @include _test-module-e00;
+  }
+ }" data-collapsed="@mixin _mixin-test-description() { ... }"><code>@mixin _mixin-test-description() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The first step in creating a Sass unit test for a mixin is to describe the testing scope. This is done by including the mixin describe() from the True library. In case of an important, large or complex mixin, there will only be one describe() function in the file. In other cases, when mixins are simpler, there can be various description in a single file.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="templates-mixin-_mixin-test-module"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#mixin-_mixin-test-module">_mixin-test-module</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin _mixin-test-module() { 
+  // Mixin successful test module description
+  // * Test cases
+  // @name _mixin-name--x00
+  // @group testing
+  @include it(&#39;Does a test module.&#39;) {
+    @include assert(&#39;Given certain parameter&#39;) {
+      @include output {
+        // @include mixin-name(certain parameters);
+      }
+      @include expect {
+        // Expected styles to be generated by mixin.
+      }
+    }
+  }
+ }" data-collapsed="@mixin _mixin-test-module() { ... }"><code>@mixin _mixin-test-module() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Tests are organized by modules with the possibility of various asserts inside each. Complex mixins will usually have more than one successful and exception test modules. This modules are created using the mixin it() from the true library and must NOT be created inside the describe() mixin. Every test module will be contained inside a private mixin with the following nomenclature: _mixin-name--sXX if a successful module or ...--eXX if an exception module. Afterwards, these modules will be included inside the describe() function.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section></section></section><section class="main__section"><h1 class="main__heading" id="testing"><div class="container">testing</div></h1><section class="main__sub-section" id="testing-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="testing-mixin-_display-on--s01"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#mixin-_display-on--s01">_display-on--s01</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin _display-on--s01() { 
+  @include it(&#39;Displays media query when until is null.&#39;) {
+    @include assert(&#39;Display on size hand.&#39;) {
+      @include output {
+        @include display-on(hand) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 320px) and (max-width: 599px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size page.&#39;) {
+      @include output {
+        @include display-on($size: page) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 600px) and (max-width: 899px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size book.&#39;) {
+      @include output {
+        @include display-on($size: book) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 900px) and (max-width: 1199px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size desk.&#39;) {
+      @include output {
+        @include display-on($size: desk) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 1200px) and (max-width: 1799px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size wide.&#39;) {
+      @include output {
+        @include display-on($size: wide) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 1800px) and (max-width: 3000px) {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+ }" data-collapsed="@mixin _display-on--s01() { ... }"><code>@mixin _display-on--s01() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Displays media query when until is null.</p><ul><li>Display on size hand.</li><li>Display on size page.</li><li>Display on size book.</li><li>Display on size desk.</li><li>Display on size wide.</li></ul></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="testing-mixin-_display-on--s02"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#mixin-_display-on--s02">_display-on--s02</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin _display-on--s02() { 
+  @include it(&#39;Displays media query when until is not null.&#39;) {
+    @include assert(&#39;Display on size hand until desk.&#39;) {
+      @include output {
+        @include display-on($size: hand, $until: desk) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 320px) and (max-width: 1799px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size hand until page.&#39;) {
+      @include output {
+        @include display-on($size: hand, $until: page) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 320px) and (max-width: 899px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size page until wide.&#39;) {
+      @include output {
+        @include display-on($size: page, $until: wide) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 600px) and (max-width: 3000px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size page until book.&#39;) {
+      @include output {
+        @include display-on($size: page, $until: book) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 600px) and (max-width: 1199px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size book unitl wide.&#39;) {
+      @include output {
+        @include display-on($size: book, $until: wide) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 900px) and (max-width: 3000px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size book unitl desk.&#39;) {
+      @include output {
+        @include display-on($size: book, $until: desk) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 900px) and (max-width: 1799px) {
+          font-size: 1em;
+        }
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size desk unitl wide.&#39;) {
+      @include output {
+        @include display-on($size: desk, $until: wide) {
+          font-size: 1em;
+        }
+      }
+      @include expect {
+        @media (min-width: 1200px) and (max-width: 3000px) {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+ }" data-collapsed="@mixin _display-on--s02() { ... }"><code>@mixin _display-on--s02() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Displays media query when until is not null.</p><ul><li>Display on size hand until desk.</li><li>Display on size hand until page.</li><li>Display on size page until wide.</li><li>Display on size page until book.</li><li>Display on size book unitl wide.</li><li>Display on size book unitl desk.</li><li>Display on size desk unitl wide.</li></ul></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="testing-mixin-_display-on--e01"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#mixin-_display-on--e01">_display-on--e01</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin _display-on--e01() { 
+  @include it(&#39;Marks an error when until and size are the same.&#39;) {
+    @include assert(&#39;Display on size hand until hand.&#39;) {
+      $device: hand;
+      @include output {
+        @include display-on($size: $device, $until: $device);
+      }
+      @include expect {
+        content: throw(
+          &#39;This media query has redundant information. ‘display-on(#{$device})’&#39;,
+          value
+        );
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size page until page.&#39;) {
+      $device: page;
+      @include output {
+        @include display-on($size: $device, $until: $device);
+      }
+      @include expect {
+        content: throw(
+          &#39;This media query has redundant information. ‘display-on(#{$device})’&#39;,
+          value
+        );
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size book until book.&#39;) {
+      $device: book;
+      @include output {
+        @include display-on($size: $device, $until: $device);
+      }
+      @include expect {
+        content: throw(
+          &#39;This media query has redundant information. ‘display-on(#{$device})’&#39;,
+          value
+        );
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size desk until desk.&#39;) {
+      $device: desk;
+      @include output {
+        @include display-on($size: $device, $until: $device);
+      }
+      @include expect {
+        content: throw(
+          &#39;This media query has redundant information. ‘display-on(#{$device})’&#39;,
+          value
+        );
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size wide until wide.&#39;) {
+      $device: wide;
+      @include output {
+        @include display-on($size: $device, $until: $device);
+      }
+      @include expect {
+        content: throw(
+          &#39;This media query has redundant information. ‘display-on(#{$device})’&#39;,
+          value
+        );
+      }
+    }
+  }
+ }" data-collapsed="@mixin _display-on--e01() { ... }"><code>@mixin _display-on--e01() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Marks an error when until and size are the same.</p><ul><li>Display on size hand until hand.</li><li>Display on size page until page.</li><li>Display on size book until book.</li><li>Display on size desk until desk.</li><li>Display on size wide until wide.</li></ul></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li></ul></section><section class="main__item container item" id="testing-mixin-_display-on--e02"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#mixin-_display-on--e02">_display-on--e02</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin _display-on--e02() { 
+  @include it(&#39;Marks an error when includes all devices.&#39;) {
+    // -------------------------------------------------------------------------------------------------
+    @include assert(&#39;Display on size hand until wide.&#39;) {
+      @include output {
+        @include display-on($size: hand, $until: wide);
+      }
+      @include expect {
+        content: throw(
+          &#39;This media query is redundant, it includes all devices.&#39;,
+          value
+        );
+      }
+    }
+  }
+ }" data-collapsed="@mixin _display-on--e02() { ... }"><code>@mixin _display-on--e02() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Marks an error when includes all devices.</p><ul><li>Display on size hand until wide.</li></ul></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li></ul></section><section class="main__item container item" id="testing-mixin-_display-on--e03"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#mixin-_display-on--e03">_display-on--e03</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin _display-on--e03() { 
+  @include it(&#39;Marks an error when size value is larger than until value.&#39;) {
+    @include assert(&#39;Display on size page until hand.&#39;) {
+      $t_size: page;
+      $t_until: hand;
+      @include output {
+        @include display-on($size: $t_size, $until: $t_until);
+      }
+      @include expect {
+        content: throw(
+          &#39;Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.&#39;,
+          value
+        );
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size wide until hand.&#39;) {
+      $t_size: wide;
+      $t_until: hand;
+      @include output {
+        @include display-on($size: $t_size, $until: $t_until);
+      }
+      @include expect {
+        content: throw(
+          &#39;Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.&#39;,
+          value
+        );
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size book until page.&#39;) {
+      $t_size: book;
+      $t_until: page;
+      @include output {
+        @include display-on($size: $t_size, $until: $t_until);
+      }
+      @include expect {
+        content: throw(
+          &#39;Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.&#39;,
+          value
+        );
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size wide until page.&#39;) {
+      $t_size: wide;
+      $t_until: page;
+      @include output {
+        @include display-on($size: $t_size, $until: $t_until);
+      }
+      @include expect {
+        content: throw(
+          &#39;Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.&#39;,
+          value
+        );
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size desk until book.&#39;) {
+      $t_size: desk;
+      $t_until: book;
+      @include output {
+        @include display-on($size: $t_size, $until: $t_until);
+      }
+      @include expect {
+        content: throw(
+          &#39;Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.&#39;,
+          value
+        );
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size wide until book.&#39;) {
+      $t_size: wide;
+      $t_until: book;
+      @include output {
+        @include display-on($size: $t_size, $until: $t_until);
+      }
+      @include expect {
+        content: throw(
+          &#39;Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.&#39;,
+          value
+        );
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert(&#39;Display on size wide until desk.&#39;) {
+      $t_size: wide;
+      $t_until: desk;
+      @include output {
+        @include display-on($size: $t_size, $until: $t_until);
+      }
+      @include expect {
+        content: throw(
+          &#39;Did you mean ‘display-on(#{$t_until}, $until: #{$t_size})’? This media query contains wrong syntax, the value of the ‘until’ parameter should be larger than the value of the ‘size’ parameter.&#39;,
+          value
+        );
+      }
+    }
+  }
+ }" data-collapsed="@mixin _display-on--e03() { ... }"><code>@mixin _display-on--e03() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Marks an error when size value is larger than until value.</p><ul><li>Display on size page until hand.</li><li>Display on size wide until hand.</li><li>Display on size book until page.</li><li>Display on size wide until page.</li><li>Display on size desk until book.</li><li>Display on size wide until book.</li><li>Display on size wide until desk.</li></ul></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li></ul></section><section class="main__item container item" id="testing-mixin-_grid--s01"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#mixin-_grid--s01">_grid--s01</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin _grid--s01() { 
+  @include it(&#39;Displayes a grid given standard parameters.&#39;) {
+    @include assert(&#39;4 Col with 0x offset.&#39;) {
+      @include output {
+        @include grid(4, 0);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+      }
+    }
+    @include assert(&#39;4 Col with 1x offset.&#39;) {
+      @include output {
+        @include grid(4, 1);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-left: 24px;
+        padding-right: 24px;
+        width: 100%;
+      }
+    }
+    @include assert(&#39;4 Col with 16x offset.&#39;) {
+      @include output {
+        @include grid(4, 16);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-left: 384px;
+        padding-right: 384px;
+        width: 100%;
+      }
+    }
+    @include assert(&#39;8 Col with 0x offset.&#39;) {
+      @include output {
+        @include grid(8, 0);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+      }
+    }
+    @include assert(&#39;8 Col with 1x offset.&#39;) {
+      @include output {
+        @include grid(8, 1);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-left: 24px;
+        padding-right: 24px;
+        width: 100%;
+      }
+    }
+    @include assert(&#39;8 Col with 16x offset.&#39;) {
+      @include output {
+        @include grid(8, 16);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-left: 384px;
+        padding-right: 384px;
+        width: 100%;
+      }
+    }
+    @include assert(&#39;12 Col with 0x offset.&#39;) {
+      @include output {
+        @include grid(12, 0);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+      }
+    }
+    @include assert(&#39;12 Col with 1x offset.&#39;) {
+      @include output {
+        @include grid(12, 1);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-left: 24px;
+        padding-right: 24px;
+        width: 100%;
+      }
+    }
+    @include assert(&#39;12 Col with 16x offset.&#39;) {
+      @include output {
+        @include grid(12, 16);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-left: 384px;
+        padding-right: 384px;
+        width: 100%;
+      }
+    }
+  }
+ }" data-collapsed="@mixin _grid--s01() { ... }"><code>@mixin _grid--s01() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Displayes a grid given standard parameters.</p><ul><li>4 Col with 0x offset.</li><li>4 Col with 1x offset.</li><li>4 Col with 16x offset.</li><li>8 Col with 0x offset.</li><li>8 Col with 1x offset.</li><li>8 Col with 16x offset.</li><li>12 Col with 0x offset.</li><li>12 Col with 1x offset.</li><li>12 Col with 16x offset.</li></ul></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="testing-mixin-_grid--e01"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#mixin-_grid--e01">_grid--e01</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin _grid--e01() { 
+  @include it(&#39;Prints an error when the amount of columns is not 4, 8 or 12.&#39;) {
+    @include assert(&#39;3 Col with 1x offset.&#39;) {
+      @include output {
+        @include grid(3, 1);
+      }
+      @include expect {
+        content: &#39;Amount of columns must be 4, 8 or 12. For more information on this, see grid standard.&#39;;
+      }
+    }
+    @include assert(&#39;5 Col with 1x offset.&#39;) {
+      @include output {
+        @include grid(5, 1);
+      }
+      @include expect {
+        content: &#39;Amount of columns must be 4, 8 or 12. For more information on this, see grid standard.&#39;;
+      }
+    }
+    @include assert(&#39;7 Col with 1x offset.&#39;) {
+      @include output {
+        @include grid(7, 1);
+      }
+      @include expect {
+        content: &#39;Amount of columns must be 4, 8 or 12. For more information on this, see grid standard.&#39;;
+      }
+    }
+    @include assert(&#39;9 Col with 1x offset.&#39;) {
+      @include output {
+        @include grid(9, 1);
+      }
+      @include expect {
+        content: &#39;Amount of columns must be 4, 8 or 12. For more information on this, see grid standard.&#39;;
+      }
+    }
+    @include assert(&#39;11 Col with 1x offset.&#39;) {
+      @include output {
+        @include grid(11, 1);
+      }
+      @include expect {
+        content: &#39;Amount of columns must be 4, 8 or 12. For more information on this, see grid standard.&#39;;
+      }
+    }
+    @include assert(&#39;13 Col with 1x offset.&#39;) {
+      @include output {
+        @include grid(13, 1);
+      }
+      @include expect {
+        content: &#39;Amount of columns must be 4, 8 or 12. For more information on this, see grid standard.&#39;;
+      }
+    }
+  }
+ }" data-collapsed="@mixin _grid--e01() { ... }"><code>@mixin _grid--e01() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Prints an error when the amount of columns is not 4, 8 or 12.</p><ul><li>3 Col with 1x offset.</li><li>5 Col with 1x offset.</li><li>7 Col with 1x offset.</li><li>9 Col with 1x offset.</li><li>11 Col with 1x offset.</li><li>13 Col with 1x offset.</li></ul></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="testing-mixin-_grid--e02"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#mixin-_grid--e02">_grid--e02</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin _grid--e02() { 
+  @include it(
+    &#39;Prints an error when the amount of columns is not between 0 and 16, inclusive.&#39;
+  ) {
+    @include assert(&#39;4 Col with 17 offset.&#39;) {
+      @include output {
+        @include grid(4, 17);
+      }
+      @include expect {
+        content: &#39;The offset multiplier must be between 0 and 16, inclusive.&#39;;
+      }
+    }
+  }
+ }" data-collapsed="@mixin _grid--e02() { ... }"><code>@mixin _grid--e02() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Prints an error when the amount of columns is not between 0 and 16, inclusive.</p><ul><li>4 Col with 17 offset.</li></ul></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section></section></section><section class="main__section"><h1 class="main__heading" id="utilities"><div class="container">utilities</div></h1><section class="main__sub-section" id="utilities-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="utilities-variable-testing-mode"><h3 class="item__heading"><a class="item__name" href="#variable-testing-mode">testing-mode</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$testing-mode: true;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The testing mode controls weather the errors are handled using @error and interrupt the compilation (false) or @debug while on testing mode (true).</p></div><h3 class="item__sub-heading">Type</h3><p><code>Bool</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li></ul></section><section class="main__item container item" id="utilities-variable-error-types"><h3 class="item__heading"><a class="item__name" href="#variable-error-types">error-types</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$error-types: (&#39;value&#39;, &#39;handling&#39;);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Error types and descriptions of their usage.</p><ul><li><strong>Value:</strong> A variable or parameter in quetion had the wrong value range or data type.</li><li><strong>Handling:</strong> Error related to error handling.</li></ul></div><h3 class="item__sub-heading">Type</h3><p><code>List</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li></ul></section><section class="main__item container item" id="utilities-variable-unit"><h3 class="item__heading"><a class="item__name" href="#variable-unit">unit</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$unit: 24px;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Determines the standard unit of measurement.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Number - pixels</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-grid"><code>grid</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-grid"><code>grid</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-grid"><code>grid</code></a></li></ul></section><section class="main__item container item" id="utilities-variable-sizes"><h3 class="item__heading"><a class="item__name" href="#variable-sizes">sizes</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$sizes: (
   hand: 320px,
   page: 600px,
   book: 900px,
   desk: 1200px,
   wide: 1800px
-);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Contains the minimum width value for the standard spaces.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Map</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-measure"><code>measure</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-measure"><code>measure</code></a></li></ul></section><section class="main__item container item" id="undefined-variable-max-sizes"><h3 class="item__heading"><a class="item__name" href="#variable-max-sizes">max-sizes</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$max-sizes: (
+);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Contains the minimum width value for the standard spaces.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Map</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#utilities-function-measure"><code>measure</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#utilities-function-measure"><code>measure</code></a></li></ul></section><section class="main__item container item" id="utilities-variable-max-sizes"><h3 class="item__heading"><a class="item__name" href="#variable-max-sizes">max-sizes</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$max-sizes: (
   hand: 599px,
   page: 899px,
   book: 1199px,
   desk: 1799px,
   wide: 3000px
-);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Contains the maximum width value for the standard spaces.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Map</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-measure"><code>measure</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-measure"><code>measure</code></a></li></ul></section></section><section class="main__sub-section" id="undefined-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="undefined-function-throw"><h3 class="item__heading"><a class="item__name" href="#function-throw">throw</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function throw($message: &#39;Unkown error.&#39;, $error-type: &#39;none&#39;) { 
+);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Contains the maximum width value for the standard spaces.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Map</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#utilities-function-measure"><code>measure</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#utilities-function-measure"><code>measure</code></a></li></ul></section></section><section class="main__sub-section" id="utilities-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="utilities-function-throw"><h3 class="item__heading"><a class="item__name" href="#function-throw">throw</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function throw($message: &#39;Unkown error.&#39;, $error-type: &#39;none&#39;) { 
   // Verifies that $error-type is valid and part of the standard.
   @if index($error-types, $error-type) == null {
     @return throw($message, &#39;handling&#39;);
@@ -29,7 +575,7 @@
 }
 div {
   @include set-width(0);
-}</code></pre></div><div class="item__example example"><div class="example__description"><p>Console message</p></div><pre class="example__code language-css"><code>Value Error: Can&#39;t Convert value 0 to pixels.</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-capitalize"><code>capitalize</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#undefined-variable-error-types"><code>error-types</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#undefined-variable-testing-mode"><code>testing-mode</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-measure"><code>measure</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-measure"><code>measure</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-display-on"><code>display-on</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-display-on"><code>display-on</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-display-on"><code>display-on</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-grid"><code>grid</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-grid"><code>grid</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-grid"><code>grid</code></a></li></ul></section><section class="main__item container item" id="undefined-function-capitalize"><h3 class="item__heading"><a class="item__name" href="#function-capitalize">capitalize</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function capitalize($string: null) { 
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Console message</p></div><pre class="example__code language-css"><code>Value Error: Can&#39;t Convert value 0 to pixels.</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-capitalize"><code>capitalize</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#utilities-variable-error-types"><code>error-types</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#utilities-variable-testing-mode"><code>testing-mode</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#testing-mixin-_display-on--e01"><code>_display-on--e01</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#testing-mixin-_display-on--e01"><code>_display-on--e01</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#testing-mixin-_display-on--e01"><code>_display-on--e01</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#testing-mixin-_display-on--e01"><code>_display-on--e01</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#testing-mixin-_display-on--e01"><code>_display-on--e01</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#testing-mixin-_display-on--e02"><code>_display-on--e02</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#testing-mixin-_display-on--e03"><code>_display-on--e03</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#testing-mixin-_display-on--e03"><code>_display-on--e03</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#testing-mixin-_display-on--e03"><code>_display-on--e03</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#testing-mixin-_display-on--e03"><code>_display-on--e03</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#testing-mixin-_display-on--e03"><code>_display-on--e03</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#testing-mixin-_display-on--e03"><code>_display-on--e03</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#testing-mixin-_display-on--e03"><code>_display-on--e03</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#utilities-function-measure"><code>measure</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#utilities-function-measure"><code>measure</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-display-on"><code>display-on</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-display-on"><code>display-on</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-display-on"><code>display-on</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-grid"><code>grid</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-grid"><code>grid</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-grid"><code>grid</code></a></li></ul></section><section class="main__item container item" id="utilities-function-capitalize"><h3 class="item__heading"><a class="item__name" href="#function-capitalize">capitalize</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function capitalize($string: null) { 
   @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
  }" data-collapsed="@function capitalize($string: null) { ... }"><code>@function capitalize($string: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Turns the first letter of a word into uppercase.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$string</code></th><td data-label="desc"><p>The word that is going to be capitalized.</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Sass</p></div><pre class="example__code language-scss"><code>p {
   &amp;::after {
@@ -37,7 +583,7 @@ div {
   }
 }</code></pre></div><div class="item__example example"><div class="example__description"><p>Compiled CSS</p></div><pre class="example__code language-css"><code>p::after {
   content: &quot;Lips&quot;;
-}</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-throw"><code>throw</code></a></li></ul></section><section class="main__item container item" id="undefined-function-measure"><h3 class="item__heading"><a class="item__name" href="#function-measure">measure</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function measure($space: null, $max: false) { 
+}</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li></ul></section><section class="main__item container item" id="utilities-function-measure"><h3 class="item__heading"><a class="item__name" href="#function-measure">measure</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function measure($space: null, $max: false) { 
   @if ($max) {
     @if (map-has-key($max-sizes, $space)) {
       @return map-get($max-sizes, $space);
@@ -63,7 +609,7 @@ div {
 }
 div.max {
   width: 599px;
-}</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#undefined-variable-max-sizes"><code>max-sizes</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#undefined-variable-max-sizes"><code>max-sizes</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#undefined-variable-sizes"><code>sizes</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#undefined-variable-sizes"><code>sizes</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-display-on"><code>display-on</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-display-on"><code>display-on</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-display-on"><code>display-on</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-display-on"><code>display-on</code></a></li></ul></section></section><section class="main__sub-section" id="undefined-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="undefined-mixin-display-on"><h3 class="item__heading"><a class="item__name" href="#mixin-display-on">display-on</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin display-on($size: null, $until: null) { 
+}</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#utilities-variable-max-sizes"><code>max-sizes</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#utilities-variable-max-sizes"><code>max-sizes</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#utilities-variable-sizes"><code>sizes</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#utilities-variable-sizes"><code>sizes</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-display-on"><code>display-on</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-display-on"><code>display-on</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-display-on"><code>display-on</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-display-on"><code>display-on</code></a></li></ul></section></section><section class="main__sub-section" id="utilities-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="utilities-mixin-display-on"><h3 class="item__heading"><a class="item__name" href="#mixin-display-on">display-on</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin display-on($size: null, $until: null) { 
   // Will contain the interior of the media query or will remain null in case of an exception.
   $mq: null;
   @if ($size == $until) {
@@ -110,12 +656,12 @@ div.max {
   @media (min-width: 600px) and (max-width: 1799px) {
     // Style
   }
-}</code></pre></div><h3 class="item__sub-heading">Output</h3><div class="item__description"><ul><li>Media query with a range width according to standard of space sizes.</li></ul></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-measure"><code>measure</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-measure"><code>measure</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-measure"><code>measure</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-measure"><code>measure</code></a></li></ul></section><section class="main__item container item" id="undefined-mixin-grid"><h3 class="item__heading"><a class="item__name" href="#mixin-grid">grid</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid($columns: 0, $offset-mutiplier: 0) { 
+}</code></pre></div><h3 class="item__sub-heading">Output</h3><div class="item__description"><ul><li>Media query with a range width according to standard of space sizes.</li></ul></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-measure"><code>measure</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-measure"><code>measure</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-measure"><code>measure</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-measure"><code>measure</code></a></li></ul></section><section class="main__item container item" id="utilities-mixin-grid"><h3 class="item__heading"><a class="item__name" href="#mixin-grid">grid</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid($columns: 0, $offset-mutiplier: 0) { 
   @if ($columns != 4) and ($columns != 8) and ($columns != 12) {
-    content: throw(&#39;&#39;, value);
-  } @else if (($offset-multiplier &gt; 0) and ($offset-multiplier &lt;= 16)) == false
+    content: throw(&#39;Amount of columns must be 4, 8 or 12. For more information on this, see grid standard.&#39;, value);
+  } @else if ($offset-multiplier &lt; 0) or ($offset-multiplier &gt; 16)
   {
-    content: throw(&#39;&#39;, value);
+    content: throw(&#39;The offset multiplier must be between 0 and 16, inclusive.&#39;, value);
   } @else {
     display: grid;
     grid-gap: $unit;
@@ -135,10 +681,10 @@ div.max {
  }" data-collapsed="@mixin grid($columns: 0, $offset-mutiplier: 0) { ... }"><code>@mixin grid($columns: 0, $offset-mutiplier: 0) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Sets the correct grid attributes depending on the amount of columns and offset spaces.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$columns</code></th><td data-label="desc"><p>Amount of columns, can only be 4, 8 or 12.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$offset-mutiplier</code></th><td data-label="desc"><p>This number multiplied by 24px will become the grid’s margin and offset.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Sass</p></div><pre class="example__code language-scss"><code>div {
   @include grid(12, 4);
 }</code></pre></div><div class="item__example example"><div class="example__description"><p>Compiled CSS</p></div><pre class="example__code language-css"><code>div {
-  width: 100%;
   display: grid;
   grid-gap: 24px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   padding-left: 96px;
   padding-right: 96px;
-}</code></pre></div><h3 class="item__sub-heading">Output</h3><div class="item__description"><ul><li>Displays a grid and sets it&#39;s columns, gap and padding.</li></ul></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#undefined-variable-unit"><code>unit</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#undefined-variable-unit"><code>unit</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#undefined-variable-unit"><code>unit</code></a></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <a class="project-info__name" href="https://github.com/poncho-guerrero/Design-System#readme">Design-system</a><!-- Version --> <span class="project-info__version">- v1.0.0</span><!-- License --> <span class="project-info__license">, under ISC</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
+  width: 100%;
+}</code></pre></div><h3 class="item__sub-heading">Output</h3><div class="item__description"><ul><li>Displays a grid and sets it&#39;s columns, gap and padding.</li></ul></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#utilities-function-throw"><code>throw</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#utilities-variable-unit"><code>unit</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#utilities-variable-unit"><code>unit</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#utilities-variable-unit"><code>unit</code></a></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <a class="project-info__name" href="https://github.io/poncho-guerrero/Design-System">Design-system</a><!-- Version --> <span class="project-info__version">- v1.0.0</span><!-- License --> <span class="project-info__license">, under ISC</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>

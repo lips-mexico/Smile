@@ -1,0 +1,253 @@
+@import '../../../src/main';
+// -----------------------------------------------------------------------------------------------------
+/// Displayes a grid given standard parameters.
+/// * 4 Col with 0x offset.
+/// * 4 Col with 1x offset.
+/// * 4 Col with 16x offset.
+/// * 8 Col with 0x offset.
+/// * 8 Col with 1x offset.
+/// * 8 Col with 16x offset.
+/// * 12 Col with 0x offset.
+/// * 12 Col with 1x offset.
+/// * 12 Col with 16x offset.
+/// @group testing
+@mixin _grid--s01 {
+  @include it('Displayes a grid given standard parameters.') {
+    @include assert('4 Col with 0x offset.') {
+      @include output {
+        @include grid(4, 0);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('4 Col with 1x offset.') {
+      @include output {
+        @include grid(4, 1);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-left: 24px;
+        padding-right: 24px;
+        width: 100%;
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('4 Col with 16x offset.') {
+      @include output {
+        @include grid(4, 16);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-left: 384px;
+        padding-right: 384px;
+        width: 100%;
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('8 Col with 0x offset.') {
+      @include output {
+        @include grid(8, 0);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('8 Col with 1x offset.') {
+      @include output {
+        @include grid(8, 1);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-left: 24px;
+        padding-right: 24px;
+        width: 100%;
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('8 Col with 16x offset.') {
+      @include output {
+        @include grid(8, 16);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-left: 384px;
+        padding-right: 384px;
+        width: 100%;
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('12 Col with 0x offset.') {
+      @include output {
+        @include grid(12, 0);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('12 Col with 1x offset.') {
+      @include output {
+        @include grid(12, 1);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-left: 24px;
+        padding-right: 24px;
+        width: 100%;
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('12 Col with 16x offset.') {
+      @include output {
+        @include grid(12, 16);
+      }
+      @include expect {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-left: 384px;
+        padding-right: 384px;
+        width: 100%;
+      }
+    }
+  }
+}
+// -----------------------------------------------------------------------------------------------------
+/// Prints an error when the amount of columns is not 4, 8 or 12.
+/// * 3 Col with 1x offset.
+/// * 5 Col with 1x offset.
+/// * 7 Col with 1x offset.
+/// * 9 Col with 1x offset.
+/// * 11 Col with 1x offset.
+/// * 13 Col with 1x offset.
+/// @group testing
+@mixin _grid--e01 {
+  @include it('Prints an error when the amount of columns is not 4, 8 or 12.') {
+    @include assert('3 Col with 1x offset.') {
+      @include output {
+        @include grid(3, 1);
+      }
+      @include expect {
+        content: throw(
+          'Amount of columns must be 4, 8 or 12. For more information on this, see grid standard.',
+          'value'
+        );
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('5 Col with 1x offset.') {
+      @include output {
+        @include grid(5, 1);
+      }
+      @include expect {
+        content: throw(
+          'Amount of columns must be 4, 8 or 12. For more information on this, see grid standard.',
+          'value'
+        );
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('7 Col with 1x offset.') {
+      @include output {
+        @include grid(7, 1);
+      }
+      @include expect {
+        content: throw(
+          'Amount of columns must be 4, 8 or 12. For more information on this, see grid standard.',
+          'value'
+        );
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('9 Col with 1x offset.') {
+      @include output {
+        @include grid(9, 1);
+      }
+      @include expect {
+        content: throw(
+          'Amount of columns must be 4, 8 or 12. For more information on this, see grid standard.',
+          'value'
+        );
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('11 Col with 1x offset.') {
+      @include output {
+        @include grid(11, 1);
+      }
+      @include expect {
+        content: throw(
+          'Amount of columns must be 4, 8 or 12. For more information on this, see grid standard.',
+          'value'
+        );
+      }
+    }
+    // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+    @include assert('13 Col with 1x offset.') {
+      @include output {
+        @include grid(13, 1);
+      }
+      @include expect {
+        content: throw(
+          'Amount of columns must be 4, 8 or 12. For more information on this, see grid standard.',
+          'value'
+        );
+      }
+    }
+  }
+}
+// -----------------------------------------------------------------------------------------------------
+/// Prints an error when the amount of columns is not between 0 and 16, inclusive.
+/// * 4 Col with 17 offset.
+/// @group testing
+@mixin _grid--e02 {
+  @include it(
+    'Prints an error when the amount of columns is not between 0 and 16, inclusive.'
+  ) {
+    @include assert('4 Col with 17 offset.') {
+      @include output {
+        @include grid(4, 17);
+      }
+      @include expect {
+        content: throw(
+          'The offset multiplier must be between 0 and 16, inclusive.',
+          'value'
+        );
+      }
+    }
+  }
+}
+// -----------------------------------------------------------------------------------------------------
+@include describe('grid() - mixin') {
+  @include _grid--s01;
+  @include _grid--e01;
+  @include _grid--e02;
+}

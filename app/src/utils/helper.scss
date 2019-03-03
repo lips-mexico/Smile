@@ -9,7 +9,6 @@
 
 // -----------------------------------------------------------------------------------------------------
 /// Turns the first letter of a word into uppercase.
-/// @name capitalize
 /// @param {string} $string [null] - The word that is going to be capitalized.
 /// @example scss - Sass
 ///   p {
@@ -21,7 +20,7 @@
 ///   p::after {
 ///     content: "Lips";
 ///   }
-///
+/// @group utilities
 @function capitalize($string: null) {
   @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
 }

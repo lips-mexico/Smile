@@ -10,12 +10,12 @@
 @import 'error';
 // -----------------------------------------------------------------------------------------------------
 /// Determines the standard unit of measurement.
-/// @name unit
 /// @type number - Pixels
+/// @group utilities
 $unit: 24px;
 /// Contains the minimum width value for the standard spaces.
-/// @name sizes
 /// @type map
+/// @group utilities
 $sizes: (
   hand: 320px,
   page: 600px,
@@ -24,8 +24,8 @@ $sizes: (
   wide: 1800px
 );
 /// Contains the maximum width value for the standard spaces.
-/// @name max-sizes
 /// @type map
+/// @group utilities
 $max-sizes: (
   hand: 599px,
   page: 899px,
@@ -36,7 +36,6 @@ $max-sizes: (
 // -----------------------------------------------------------------------------------------------------
 /// Looks for a the limit value of a space's width. Default returns the lower limit, the $max variable
 /// controls when to return the upper limit.
-/// @name measure
 /// @param {string} space [null] - Name of the space that needs to be measured.
 /// @param {bool} max [false] - Returns the upper limit of the space's width.
 /// @example scss - Sass
@@ -55,7 +54,7 @@ $max-sizes: (
 ///   div.max {
 ///     width: 599px;
 ///   }
-///
+/// @group utilities
 @function measure($space: null, $max: false) {
   @if ($max) {
     @if (map-has-key($max-sizes, $space)) {
@@ -75,7 +74,6 @@ $max-sizes: (
 /// Creates the correct media query according to a space size input. The exact values will be the
 /// limits of said space in pixels. Devices with screens smaller than 320px are not going to be handled
 /// by the 'display-on()' function. Correct input values are: hand, page, book, desk, and wide.
-/// @name display-on
 /// @param {string} size [null] - Space size that will be used to create a media query.
 /// @param {string} until [null] - Optional space size used to extend $size space to a larger limit.
 /// @content
@@ -92,7 +90,7 @@ $max-sizes: (
 ///       // Style
 ///     }
 ///   }
-///
+/// @group utilities
 @mixin display-on($size, $until: null) {
   // Will contain the interior of the media query or will remain null in case of an exception.
   $mq: null;
@@ -135,7 +133,6 @@ $max-sizes: (
 }
 // -----------------------------------------------------------------------------------------------------
 /// Sets the correct grid attributes depending on the amount of columns and offset spaces.
-/// @name grid
 /// @param {number} $columns [0] - Amount of columns, can only be 4, 8 or 12.
 /// @param {number} $offset-mutiplier [0] - This number multiplied by 24px will become the grid’s ///
 /// margin and offset.
@@ -146,20 +143,25 @@ $max-sizes: (
 ///   }
 /// @example css - Compiled CSS
 ///   div {
-///     width: 100%;
 ///     display: grid;
 ///     grid-gap: 24px;
 ///     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 ///     padding-left: 96px;
 ///     padding-right: 96px;
+///     width: 100%;
 ///   }
-///
+/// @group utilities
 @mixin grid($columns: 0, $offset-multiplier: 0) {
   @if ($columns != 4) and ($columns != 8) and ($columns != 12) {
-    content: throw('', value);
-  } @else if (($offset-multiplier > 0) and ($offset-multiplier <= 16)) == false
-  {
-    content: throw('', value);
+    content: throw(
+      'Amount of columns must be 4, 8 or 12. For more information on this, see grid standard.',
+      'value'
+    );
+  } @else if ($offset-multiplier < 0) or ($offset-multiplier > 16) {
+    content: throw(
+      'The offset multiplier must be between 0 and 16, inclusive.',
+      'value'
+    );
   } @else {
     display: grid;
     grid-gap: $unit;
@@ -170,7 +172,10 @@ $max-sizes: (
     } @else if ($columns == 12) {
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     } @else {
-      content: throw('', value);
+      content: throw(
+        'Amount of columns must be 4, 8 or 12. For more information on this, see grid standard.',
+        'value'
+      );
     }
     padding-left: $unit * $offset-multiplier;
     padding-right: $unit * $offset-multiplier;
