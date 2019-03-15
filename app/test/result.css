@@ -345,8 +345,8 @@
   display: grid;
   grid-gap: 24px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%; }
 
 /*   END_OUTPUT   */
@@ -411,8 +411,8 @@
   display: grid;
   grid-gap: 24px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%; }
 
 /*   END_OUTPUT   */
@@ -477,8 +477,8 @@
   display: grid;
   grid-gap: 24px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%; }
 
 /*   END_OUTPUT   */
@@ -627,13 +627,3 @@
 /*   END_ASSERT   */
 /*  */
 /*  */
-/* # SUMMARY ---------- */
-/* 8 Tests: */
-/* - 0 Passed */
-/* - 0 Failed */
-/* - 8 Output to CSS */
-/* Stats: */
-/* - 2 Modules */
-/* - 8 Tests */
-/* - 41 Assertions */
-/* -------------------- */

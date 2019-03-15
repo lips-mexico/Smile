@@ -12,8 +12,8 @@
 /// * 12 Col with 16x offset.
 /// @group testing
 @mixin _grid--s01 {
-  @include it('Displayes a grid given standard parameters.') {
-    @include assert('4 Col with 0x offset.') {
+  @include it('Displayes a grid given standard parameters') {
+    @include assert('4 Col with 0x offset') {
       @include output {
         @include grid(4, 0);
       }
@@ -27,7 +27,7 @@
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-    @include assert('4 Col with 1x offset.') {
+    @include assert('4 Col with 1x offset') {
       @include output {
         @include grid(4, 1);
       }
@@ -41,7 +41,7 @@
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-    @include assert('4 Col with 16x offset.') {
+    @include assert('4 Col with 16x offset') {
       @include output {
         @include grid(4, 16);
       }
@@ -55,7 +55,7 @@
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-    @include assert('8 Col with 0x offset.') {
+    @include assert('8 Col with 0x offset') {
       @include output {
         @include grid(8, 0);
       }
@@ -69,7 +69,7 @@
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-    @include assert('8 Col with 1x offset.') {
+    @include assert('8 Col with 1x offset') {
       @include output {
         @include grid(8, 1);
       }
@@ -83,7 +83,7 @@
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-    @include assert('8 Col with 16x offset.') {
+    @include assert('8 Col with 16x offset') {
       @include output {
         @include grid(8, 16);
       }
@@ -97,7 +97,7 @@
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-    @include assert('12 Col with 0x offset.') {
+    @include assert('12 Col with 0x offset') {
       @include output {
         @include grid(12, 0);
       }
@@ -111,7 +111,7 @@
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-    @include assert('12 Col with 1x offset.') {
+    @include assert('12 Col with 1x offset') {
       @include output {
         @include grid(12, 1);
       }
@@ -125,7 +125,7 @@
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-    @include assert('12 Col with 16x offset.') {
+    @include assert('12 Col with 16x offset') {
       @include output {
         @include grid(12, 16);
       }
@@ -150,8 +150,8 @@
 /// * 13 Col with 1x offset.
 /// @group testing
 @mixin _grid--e01 {
-  @include it('Prints an error when the amount of columns is not 4, 8 or 12.') {
-    @include assert('3 Col with 1x offset.') {
+  @include it('Prints an error when the amount of columns is not 4, 8 or 12') {
+    @include assert('3 Col with 1x offset') {
       @include output {
         @include grid(3, 1);
       }
@@ -163,7 +163,7 @@
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-    @include assert('5 Col with 1x offset.') {
+    @include assert('5 Col with 1x offset') {
       @include output {
         @include grid(5, 1);
       }
@@ -175,7 +175,7 @@
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-    @include assert('7 Col with 1x offset.') {
+    @include assert('7 Col with 1x offset') {
       @include output {
         @include grid(7, 1);
       }
@@ -187,7 +187,7 @@
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-    @include assert('9 Col with 1x offset.') {
+    @include assert('9 Col with 1x offset') {
       @include output {
         @include grid(9, 1);
       }
@@ -199,7 +199,7 @@
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-    @include assert('11 Col with 1x offset.') {
+    @include assert('11 Col with 1x offset') {
       @include output {
         @include grid(11, 1);
       }
@@ -211,7 +211,7 @@
       }
     }
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-    @include assert('13 Col with 1x offset.') {
+    @include assert('13 Col with 1x offset') {
       @include output {
         @include grid(13, 1);
       }
@@ -232,7 +232,7 @@
   @include it(
     'Prints an error when the amount of columns is not between 0 and 16, inclusive.'
   ) {
-    @include assert('4 Col with 17 offset.') {
+    @include assert('4 Col with 17 offset') {
       @include output {
         @include grid(4, 17);
       }

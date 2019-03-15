@@ -41,13 +41,11 @@ var app = {
  * @description - Compiles the main test file and places the compiled results under the same directory.
  */
 gulp.task('test', function() {
-  // return gulp
-  //   .src(file.test)
-  //   .pipe(sass())
-  //   .pipe(rename('result.css'))
-  //   .pipe(gulp.dest(app.test));
-  gulp.src(file.mocha_unit, {read: false})
-    .pipe(mocha({ reporter: 'nyan'}));
+  return gulp
+    .src(file.test)
+    .pipe(sass())
+    .pipe(rename('result.css'))
+    .pipe(gulp.dest(app.test));
 });
 // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 /**

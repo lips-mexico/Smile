@@ -17,7 +17,3 @@
 /// one or two space names as parameter.
 /// @name test_grid
 @import 'units/utils/test_grid';
-// -----------------------------------------------------------------------------------------------------
-// Result display configuration.
-$true-terminal-output: true;
-@include report;
