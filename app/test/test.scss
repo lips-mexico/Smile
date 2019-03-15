@@ -6,7 +6,7 @@
 //    \___/|_| |_|_|\__|  \__\___||___/\__|___/
 //
 // =====================================================================================================
-@import '../lib/true/true';
+@import '../../node_modules/sass-true/sass/true';
 // -----------------------------------------------------------------------------------------------------
 /// Tests mixin display-on() inside utils/layouts.scss. Checks the generation of media queries given
 /// one or two space names as parameter.

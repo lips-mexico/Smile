@@ -8,16 +8,18 @@
 //                 |_|
 // =====================================================================================================
 // Dependencies
+var mocha = require('mocha');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var rename = require('gulp-rename');
 sass.compiler = require('node-sass');
-let sourcemaps = require('gulp-sourcemaps');
+var sourcemaps = require('gulp-sourcemaps');
 var sassdoc = require('sassdoc');
 
 // Routes
 var file = {
   test: './app/test/test.scss',
+  mocha_unit: './app/test/test_sass.js',
   test_units: './app/test/units/**/*.scss',
   result: './app/test/result.css',
   main: './app/src/main.scss',
@@ -39,11 +41,13 @@ var app = {
  * @description - Compiles the main test file and places the compiled results under the same directory.
  */
 gulp.task('test', function() {
-  return gulp
-    .src(file.test)
-    .pipe(sass())
-    .pipe(rename('result.css'))
-    .pipe(gulp.dest(app.test));
+  // return gulp
+  //   .src(file.test)
+  //   .pipe(sass())
+  //   .pipe(rename('result.css'))
+  //   .pipe(gulp.dest(app.test));
+  gulp.src(file.mocha_unit, {read: false})
+    .pipe(mocha({ reporter: 'nyan'}));
 });
 // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 /**

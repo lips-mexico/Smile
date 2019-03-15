@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "gulp test"
+    "test": "mocha app/test/test_sass.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,9 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
+    "mocha": "^6.0.2",
     "node-sass": "^4.11.0",
+    "sass-true": "^4.0.0",
     "sassdoc": "^2.5.1"
   }
 }
