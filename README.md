@@ -1,6 +1,7 @@
 # Smile
 Smile is our design system. It contains guidelines for interface components and page layouts. It's connected to the brand guidelines in order to create consistent voice and tone content and illustrations. Also, every interface guideline is programmed with Sass and are documented automatically by SassDoc [here](https://lips-mexico.github.io/Smile/).
 
+#### Table of contents
 <!-- vscode-markdown-toc -->
 * [Getting started](#Gettingstarted)
 	* [Adding Smile to a project](#AddingSmiletoaproject)
@@ -46,9 +47,7 @@ npm install --save-dev
 #### <a name='Cloning'></a>Cloning
 1. Clone the [repo](https://github.com/lips-mexico/Smile)
 2. Change to the correct branch.
-3. Start developing.
 
 ## <a name='FurtherReading'></a>Further Reading
-* [Documentation]() - Write complete and useful documentation for Sass using SassDoc and Gulp.
-* [Testing]() - Design and carry out unit tests for mixins and functions using True and Gulp.
-
+* [Testing](https://github.com/lips-mexico/Smile/tree/master/app/test) - Design and carry out unit tests for mixins and functions using True and Gulp.
+* [Documentation](https://github.com/lips-mexico/Smile/tree/master/docs) - Write complete and useful documentation for Sass using SassDoc and Gulp.
